@@ -5,7 +5,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const env = process.env.NODE_ENV;
+const isProduction = env === "production";
+const isDevelopment = env === "development";
+
 module.exports = (env, options) => ({
+  devtool: isDevelopment ? "cheap-module-eval-source-map" : "source-map",
   optimization: {
     minimizer: [
       new TerserPlugin({ cache: true, parallel: true, sourceMap: false }),
