@@ -10,9 +10,8 @@ defmodule CertifyCardsWeb.CertifiedController do
   @base_url "https://enabling.io"
 
   def validate(conn, %{"deviceId" => device_code, "cardId" => card_code}) do
-    with {:ok, %Card{user_code: user_code}} <- Cards.get_by_code(card_code),
-         {:ok, %Device{certificate_code: certificate_code}} <- Devices.get_by_code(device_code),
-         {:ok, status} <- get_status(certificate_code, user_code) do
+    with {:ok, %Device{certificate_code: certificate_code}} <- Devices.get_by_code(device_code),
+         {:ok, status} <- get_status(certificate_code, card_code) do
       if(status["compliant"]) do
         json(conn, %{message: "certified"})
       else

@@ -12,23 +12,8 @@
 
 CertifyCards.Repo.insert_all(CertifyCards.Devices.Device, [
   %{
-    certificate_code: "comp",
-    code: "917293874912374",
-    inserted_at: NaiveDateTime.utc_now(),
-    updated_at: NaiveDateTime.utc_now()
-  }
-])
-
-CertifyCards.Repo.insert_all(CertifyCards.Cards.Card, [
-  %{
-    user_code: "FYI",
-    code: "19816639131196",
-    inserted_at: NaiveDateTime.utc_now(),
-    updated_at: NaiveDateTime.utc_now()
-  },
-  %{
-    user_code: "OGG",
-    code: "14514847475",
+    certificate_code: "KeKo",
+    code: "3C:71:BF:96:A9:14",
     inserted_at: NaiveDateTime.utc_now(),
     updated_at: NaiveDateTime.utc_now()
   }
