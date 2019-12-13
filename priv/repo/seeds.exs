@@ -9,11 +9,12 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+CertifyCards.Repo.delete_all(CertifyCards.Devices.Device)
 
 CertifyCards.Repo.insert_all(CertifyCards.Devices.Device, [
   %{
     certificate_code: "KeKo",
-    code: "3C:71:BF:96:A9:14",
+    code: "917293874912374",
     inserted_at: NaiveDateTime.utc_now(),
     updated_at: NaiveDateTime.utc_now()
   }
