@@ -18,8 +18,7 @@ defmodule CertifyCardsWeb.CertifiedController do
         json(conn, %{message: "not certified"})
       end
     else
-      {:error, :not_found} -> json(conn, %{message: "not certified"})
-      error -> json(conn, %{message: "not found"})
+      _ -> json(conn, %{message: "not found"})
     end
   end
 
